@@ -83,6 +83,10 @@ x=(1,2,3)
 x[1]
 x[1]=5        #statement gives an error since Tuple are immutable.
 
+#tuple() converts a list of items into tuples
+y=[100,200,"python","programming "]
+tupy=tuple(y)                              
+
 #type() function return the DataType of variable
 type(x)
 
