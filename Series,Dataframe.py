@@ -115,3 +115,22 @@ df = pd.DataFrame(data=np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), index= [2.5,
 print(df)
 df_reset = df.reset_index(level=0, drop=True)
 print(df_reset)
+
+#Deleting an Index from Your DataFrame
+df = pd.DataFrame(data=np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9], [40, 50, 60], [23, 35, 37]]), 
+                  index= [2.5, 12.6, 4.8, 4.8, 2.5], 
+                  columns=[48, 49, 50])
+df.reset_index().drop_duplicates(subset='index', keep='last').set_index('index')
+
+df = pd.DataFrame(data=np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), index= [2, 'A', 4], columns=[48, 49, 50])
+print(df)
+
+# Drop the column with label 'A'                  
+df.drop(50, axis=1, inplace=True)
+
+
+# Drop the column at position 1
+df.drop(df.columns[[1]], axis=1)
+
+#The axis argument is either 0 when it indicates rows and 1 when it is used to drop columns.
+#set inplace to True to delete the column without having to reassign the DataFrame.
