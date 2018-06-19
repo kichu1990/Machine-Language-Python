@@ -87,3 +87,6 @@ print(dataf.iloc[0])
 
 # Use `loc[]` to select a column
 print(dataf.loc[:,'Col2'])
+
+##use one of your columns and make it your index.
+dataf.set_index('Col2')
