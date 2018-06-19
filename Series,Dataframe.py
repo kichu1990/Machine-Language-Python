@@ -38,6 +38,12 @@ a3=np.array([102,"Jim","Belgium"])
 df1=pd.DataFrame(data=[a1,a2,a3],columns=['ID','Name','Location'])
 print(df1)
 
+
+# Check out the DataFrame `df`
+print(df)
+
+# Drop the index at position 1
+print(df.drop(df.index[1]))
 df1[["ID","Name"]]                              #To access multiple Columns
 
 #Creating Dataframe from Dictionary
@@ -134,3 +140,6 @@ df.drop(df.columns[[1]], axis=1)
 
 #The axis argument is either 0 when it indicates rows and 1 when it is used to drop columns.
 #set inplace to True to delete the column without having to reassign the DataFrame.
+
+# Drop  method() using the index 
+print(df.drop(df.index[1]))
