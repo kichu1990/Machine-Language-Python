@@ -82,11 +82,36 @@ dataf=pd.DataFrame(data=data1[1:,1:],
                   columns=data1[0,1:])
 print(dataf)
 
+#.loc[] works on labels of your index.
+#.iloc[] works on the positions in your index.
+
 # Use `iloc[]` to select a row
 print(dataf.iloc[0])
 
 # Use `loc[]` to select a column
 print(dataf.loc[:,'Col2'])
 
+#To make Index part of the Dataframe
+df = pd.DataFrame(data=np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), columns=['A', 'B', 'C'])
+
+# Use `.index`
+df['D'] = df.index
+
+# Print `df`
+print(df)
+
+#Append column to Dataframe
+df.loc[:,'D'] = pd.Series([10,11,12],index=df.index)
+df['E'] = df.index
+
+# Print `df`
+print(df)
+
 ##use one of your columns and make it your index.
 dataf.set_index('Col2')
+
+#Resetting the Index of Your DataFrame
+df = pd.DataFrame(data=np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), index= [2.5, 12.6, 4.8], columns=[48, 49, 50])
+print(df)
+df_reset = df.reset_index(level=0, drop=True)
+print(df_reset)
