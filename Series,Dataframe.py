@@ -1,9 +1,3 @@
-
-# coding: utf-8
-
-# In[4]:
-
-
 import pandas as pd
 import numpy as np
 #Series in Python
@@ -13,22 +7,8 @@ import numpy as np
 label=["A","B","C","D"]
 age=[23,34,56,12]
 aseries=pd.Series(data=age,index=label)
-
-
-# In[5]:
-
-
-aseries
-
-
-# In[7]:
-
-
+print(aseries)
 aseries["A"]                       #To access data using index
-
-
-# In[21]:
-
 
 label1=["A","B","C","D"]
 age1=[23,34,56,"D"]
@@ -41,67 +21,29 @@ print(arage1)
 aseries2=pd.Series(data=age1,index=label1)
 print(aseries2)
 
-
-# In[23]:
-
-
 #Dataframe :collection of Array with Indexes
 df=pd.DataFrame(data=age1,index=label1,columns=['column1'])
-df
-
-
-# In[26]:
-
+print(df)
 
 df['column1']              #To access the columns in Dataframe -->dataframename['columname']
 #OR
 df.column1
 
-
-# In[28]:
-
-
 df1=pd.DataFrame(data=np.array(['1','2','3','4']).reshape(2,2),columns=['column1','column2'])
-
-
-# In[29]:
-
-
-df1
-
-
-# In[35]:
-
+print(df1)
 
 a1=np.array([100,"John","Pune"])
 a2=np.array([101,"Jack","USA"])
 a3=np.array([102,"Jim","Belgium"])
 df1=pd.DataFrame(data=[a1,a2,a3],columns=['ID','Name','Location'])
-
-
-# In[36]:
-
-
 print(df1)
 
-
-# In[38]:
-
-
 df1[["ID","Name"]]                              #To access multiple Columns
-
-
-# In[53]:
-
 
 #Creating Dataframe from Dictionary
 myData={'Name':['Sam','Ajay','Anand'],'Age':[23,22,34]}
 df2=pd.DataFrame(data=myData)
 print(df2)
-
-
-# In[61]:
-
 
 # Using `iloc[]`
 print(df1.iloc[0][0])
@@ -115,17 +57,9 @@ print(df1.at[0,'Name'])
 # Using `iat[]`
 print(df1.iat[0,0])
 
-
-# In[62]:
-
-
 # Take a 2D array as input to your DataFrame 
 my_2darray = np.array([[1, 2, 3], [4, 5, 6]])
 print(pd.DataFrame(my_2darray))
-
-# Take a dictionary as input to your DataFrame 
-my_dict = {1: ['1', '3'], 2: ['1', '2'], 3: ['2', '4']}
-print(pd.DataFrame(my_dict))
 
 # Take a DataFrame as input to your DataFrame 
 my_df = pd.DataFrame(data=[4,5,6,7], index=range(0,4), columns=['A'])
@@ -135,13 +69,21 @@ print(pd.DataFrame(my_df))
 my_series = pd.Series({"United Kingdom":"London", "India":"New Delhi", "United States":"Washington", "Belgium":"Brussels"})
 print(pd.DataFrame(my_series))
 
-
-# In[64]:
-
-
 # Use the `shape` property Return Dimesnion of the Dataframe
 print(df2.shape)
 
 # Or use the `len()` function with the `index` property Return no of rows in Dataframe
 print(len(df2.index))
 
+data1 = np.array([['','Col1','Col2'],
+                ['Row1',1,2],
+                ['Row2',3,4]])
+dataf=pd.DataFrame(data=data1[1:,1:],
+                  columns=data1[0,1:])
+print(dataf)
+
+# Use `iloc[]` to select a row
+print(dataf.iloc[0])
+
+# Use `loc[]` to select a column
+print(dataf.loc[:,'Col2'])
