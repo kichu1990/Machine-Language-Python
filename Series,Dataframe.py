@@ -134,7 +134,6 @@ print(df)
 # Drop the column with label 50                 
 df.drop(50, axis=1, inplace=True)
 
-
 # Drop the column at position 1
 df.drop(df.columns[[1]], axis=1)
 
@@ -142,4 +141,16 @@ df.drop(df.columns[[1]], axis=1)
 #set inplace to True to delete the column without having to reassign the DataFrame.
 
 # Drop  method() using the index 
+print(df.drop(df.index[1]))
+
+#remove duplicate rows from your DataFrame by executing df.drop_duplicates(). You can also remove rows from your DataFrame, taking 
+#into account only the duplicate values that exist in one column.
+
+df=pd.DataFrame(data=np.array([[1,2,3,4],[4,5,6,5],[7,8,9,6],[23,50,60,7],[23,35,37,23]]),index=[2.5,12.6,4.8,4.8,2.5],
+                columns=[48,49,50,50])
+
+df.drop_duplicates([48], keep='last')
+
+#drop() method, use the index property to specify the index of which rows you want to remove from your DataFrame:
+# Drop the index at position 1
 print(df.drop(df.index[1]))
