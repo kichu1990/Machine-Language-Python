@@ -131,7 +131,7 @@ df.reset_index().drop_duplicates(subset='index', keep='last').set_index('index')
 df = pd.DataFrame(data=np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), index= [2, 'A', 4], columns=[48, 49, 50])
 print(df)
 
-# Drop the column with label 'A'                  
+# Drop the column with label 50                 
 df.drop(50, axis=1, inplace=True)
 
 
