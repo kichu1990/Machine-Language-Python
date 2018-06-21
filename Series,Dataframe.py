@@ -168,3 +168,9 @@ newcols = {
 
 df.rename(columns=newcols, inplace=True)
 df.rename(index={1: 'a'})                   #rename Index 1 to 'a'
+
+products = pd.DataFrame({'category': ['Cleaning', 'Cleaning', 'Entertainment', 'Entertainment', 'Tech', 'Tech'],
+                        'store': ['Walmart', 'Dia', 'Walmart', 'Fnac', 'Dia','Walmart'],
+                        'price':[11.42, 23.50, 19.99, 15.95, 55.75, 111.55],
+                        'testscore': [4, 3, 5, 7, 5, 8]})
+pivot_products = products.pivot(index='category', columns='store', values='price')
