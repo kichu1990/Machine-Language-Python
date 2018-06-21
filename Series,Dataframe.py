@@ -154,3 +154,17 @@ df.drop_duplicates([48], keep='last')
 #drop() method, use the index property to specify the index of which rows you want to remove from your DataFrame:
 # Drop the index at position 1
 print(df.drop(df.index[1]))
+
+#Rename the Index or Columns of a  DataFrame
+df=pd.DataFrame(data=np.array([[1,2,3,4],[4,5,6,5],[7,8,9,6],[23,50,60,7],[23,35,37,23]]),
+                columns=[48,49,50,51])
+
+newcols = {
+    48: 'new_column_1', 
+    49: 'new_column_2', 
+    50: 'new_column_3',
+    51: 'new_column_4'
+}
+
+df.rename(columns=newcols, inplace=True)
+df.rename(index={1: 'a'})                   #rename Index 1 to 'a'
