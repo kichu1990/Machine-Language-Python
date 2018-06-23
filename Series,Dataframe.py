@@ -132,9 +132,9 @@ df = pd.DataFrame(data=np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), index= [2, '
 print(df)
 
 # Drop the column with label 50                 
-df.drop(50, axis=1, inplace=True)
+df.drop(50, axis=1, inplace=True)      #inplace=True means t will override original Datafarme
 #or
-del df[50]
+del df[50] 
 
 # Drop the column at position 1
 df.drop(df.columns[[1]], axis=1)
