@@ -136,6 +136,9 @@ df.drop(50, axis=1, inplace=True)      #inplace=True means t will override origi
 #or
 del df[50] 
 
+#subsetting based on condition
+df[(df[50]>6)]                         #Return all the rows where column 50 greater than 6
+
 # Drop the column at position 1
 df.drop(df.columns[[1]], axis=1)
 
