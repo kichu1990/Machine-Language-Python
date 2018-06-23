@@ -46,4 +46,21 @@ plt.title("Histogram of Total Bill in $")
 plt.boxplot(tips['total_bill'],showfliers=True)
 
 #Distribution plot or Distplot same as Histogram
+sns.distplot(tips['total_bill'])  #KDE is Kernel Density Function,instead frequency in histogram  we get probability in distplot
 
+#Joinplot drawn b/w two variables, we get scatter plot between variable and Histogram for each variable.
+sns.jointplot(x="total_bill",y="tip",data=tips)
+
+#Pair Plot : pairwise relationship across entire Dataframe for numerical columns and support color hue argument for categorical columns
+sns.pairplot(tips,hue='sex') 
+
+tips.corr()     #To find corelation between continuous variable between DataFrame
+
+#Barplot is a general plot allows us to aggregate  categorical data based on some function,default is mean
+sns.barplot(x='sex',y='total_bill',data=tips)
+
+#countplot
+sns.countplot(x='sex',data=tips)
+
+sns.boxplot(x='day',y='total_bill',data=tips)
+sns.boxplot(data=tips)
