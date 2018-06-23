@@ -140,6 +140,8 @@ del df[50]
 df[(df[50]>6)]                         #Return all the rows where column 50 greater than 6
 df[50]>6                               #Return Boolean value
 
+df[(df[50]>6)][49]
+
 # Drop the column at position 1
 df.drop(df.columns[[1]], axis=1)
 
