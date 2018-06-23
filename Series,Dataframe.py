@@ -133,6 +133,8 @@ print(df)
 
 # Drop the column with label 50                 
 df.drop(50, axis=1, inplace=True)
+#or
+del df[50]
 
 # Drop the column at position 1
 df.drop(df.columns[[1]], axis=1)
