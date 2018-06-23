@@ -26,6 +26,7 @@ df=pd.DataFrame(data=age1,index=label1,columns=['column1'])
 print(df)
 
 df['column1']              #To access the columns in Dataframe -->dataframename['columname']
+df1[["ID","Name"]]         #To access multiple Columns
 #OR
 df.column1
 
@@ -44,7 +45,6 @@ print(df)
 
 # Drop the index at position 1
 print(df.drop(df.index[1]))
-df1[["ID","Name"]]                              #To access multiple Columns
 
 #Creating Dataframe from Dictionary
 myData={'Name':['Sam','Ajay','Anand'],'Age':[23,22,34]}
