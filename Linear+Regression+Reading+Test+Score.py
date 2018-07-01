@@ -63,5 +63,26 @@ pisa2009train['schoolSize'].fillna(pisa2009train['schoolSize'].median(), inplace
 pisa2009train['studentsInEnglish'].fillna(pisa2009train['studentsInEnglish'].median(), inplace=True)
 pisa2009train['minutesPerWeekEnglish'].fillna(pisa2009train['minutesPerWeekEnglish'].median(), inplace=True)
 
+q75_studentsInEnglish, q25_studentsInEnglish = np.percentile(pisa.studentsInEnglish.dropna(), [75 ,25])
+iqr_studentsInEnglish = q75_studentsInEnglish - q25_studentsInEnglish
+min_studentsInEnglish = q25_studentsInEnglish - (iqr*1.5)
+max_studentsInEnglish = q75_studentsInEnglish + (iqr*1.5)
 
+q75_minutesPerWeekEnglish, q25_minutesPerWeekEnglish = np.percentile(pisa.minutesPerWeekEnglish.dropna(), [75 ,25])
+iqr_minutesPerWeekEnglish = q75_minutesPerWeekEnglish - q25_minutesPerWeekEnglish
+min_minutesPerWeekEnglish = q25_minutesPerWeekEnglish - (iqr*1.5)
+max_minutesPerWeekEnglish = q75_minutesPerWeekEnglish + (iqr*1.5)
+                            
+q75_schoolSize, q25_schoolSize = np.percentile(pisa.schoolSize.dropna(), [75 ,25])
+iqr_schoolSize = q75_schoolSize- q25_schoolSize 
+min_schoolSize = q25_schoolSize - (iqr*1.5)
+max_schoolSize = q75_schoolSize + (iqr*1.5)
+                            
+pisa['studentsInEnglish'] = np.where(pisa.studentsInEnglish > max_studentsInEnglish, max_studentsInEnglish, pisa.studentsInEnglish)
+pisa['studentsInEnglish'] = np.where(pisa.studentsInEnglish < min_studentsInEnglish, min_studentsInEnglish, pisa.studentsInEnglish) 
+                            
 
+pisa['minutesPerWeekEnglish'] = np.where(pisa.minutesPerWeekEnglish > max_minutesPerWeekEnglish, max_minutesPerWeekEnglish, 
+                                         pisa.minutesPerWeekEnglish)
+pisa['minutesPerWeekEnglish'] = np.where(pisa.minutesPerWeekEnglish < min_minutesPerWeekEnglish, min_minutesPerWeekEnglish, 
+                                         pisa.minutesPerWeekEnglish)                              
