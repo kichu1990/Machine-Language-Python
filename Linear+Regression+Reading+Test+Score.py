@@ -1,5 +1,5 @@
-get_ipython().magic('pwd #To see Current working Directory')
-get_ipython().magic('cd "D:\\\\Study  Materials\\\\R Language\\\\DataSet"                         #To change working Directory')
+%pwd                                                                           #To see Working Directory   
+%cd "D:\\Study  Materials\\R Language\\DataSet"                                #To change working Directory
 
 import pandas as pd
 import numpy as np
@@ -7,7 +7,6 @@ import matplotlib.pyplot as plt
 import statsmodels.formula.api as sm
 import scipy,scipy.stats
 import seaborn as sns
-get_ipython().magic('matplotlib inline')
 
 #Read CSV Files
 pisa2009test=pd.read_csv("pisa2009test.csv")
@@ -24,25 +23,25 @@ pisa.info()
 pisa.isnull().sum()
 
 #Filling missing value for categorical Variable
-pisa2009train['male'].fillna(pisa2009train['male'].mode()[0], inplace=True)
-pisa2009train['raceeth'].fillna(pisa2009train['raceeth'].mode()[0], inplace=True)
-pisa2009train['preschool'].fillna(pisa2009train['preschool'].mode()[0], inplace=True)
-pisa2009train['expectBachelors'].fillna(pisa2009train['expectBachelors'].mode()[0], inplace=True)
-pisa2009train['motherHS'].fillna(pisa2009train['motherHS'].mode()[0], inplace=True)
-pisa2009train['motherBachelors'].fillna(pisa2009train['motherBachelors'].mode()[0], inplace=True)
-pisa2009train['motherWork'].fillna(pisa2009train['motherWork'].mode()[0], inplace=True)
-pisa2009train['fatherHS'].fillna(pisa2009train['fatherHS'].mode()[0], inplace=True)
-pisa2009train['fatherBachelors'].fillna(pisa2009train['fatherBachelors'].mode()[0], inplace=True)
-pisa2009train['englishAtHome'].fillna(pisa2009train['englishAtHome'].mode()[0], inplace=True)
-pisa2009train['computerForSchoolwork'].fillna(pisa2009train['computerForSchoolwork'].mode()[0], inplace=True)
-pisa2009train['read30MinsADay'].fillna(pisa2009train['read30MinsADay'].mode()[0], inplace=True)
-pisa2009train['schoolHasLibrary'].fillna(pisa2009train['schoolHasLibrary'].mode()[0], inplace=True)
-pisa2009train['publicSchool'].fillna(pisa2009train['publicSchool'].mode()[0], inplace=True)
-pisa2009train['urban'].fillna(pisa2009train['urban'].mode()[0], inplace=True)
-pisa2009train['fatherWork'].fillna(pisa2009train['fatherWork'].mode()[0], inplace=True)
-pisa2009train['selfBornUS'].fillna(pisa2009train['selfBornUS'].mode()[0], inplace=True)
-pisa2009train['motherBornUS'].fillna(pisa2009train['motherBornUS'].mode()[0], inplace=True)
-pisa2009train['fatherBornUS'].fillna(pisa2009train['fatherBornUS'].mode()[0], inplace=True)
+pisa['male'].fillna(pisa['male'].mode()[0], inplace=True)
+pisa['raceeth'].fillna(pisa['raceeth'].mode()[0], inplace=True)
+pisa['preschool'].fillna(pisa['preschool'].mode()[0], inplace=True)
+pisa['expectBachelors'].fillna(pisa['expectBachelors'].mode()[0], inplace=True)
+pisa['motherHS'].fillna(pisa['motherHS'].mode()[0], inplace=True)
+pisa['motherBachelors'].fillna(pisa['motherBachelors'].mode()[0], inplace=True)
+pisa['motherWork'].fillna(pisa['motherWork'].mode()[0], inplace=True)
+pisa['fatherHS'].fillna(pisa['fatherHS'].mode()[0], inplace=True)
+pisa['fatherBachelors'].fillna(pisa['fatherBachelors'].mode()[0], inplace=True)
+pisa['englishAtHome'].fillna(pisa['englishAtHome'].mode()[0], inplace=True)
+pisa['computerForSchoolwork'].fillna(pisa['computerForSchoolwork'].mode()[0], inplace=True)
+pisa['read30MinsADay'].fillna(pisa['read30MinsADay'].mode()[0], inplace=True)
+pisa['schoolHasLibrary'].fillna(pisa['schoolHasLibrary'].mode()[0], inplace=True)
+pisa['publicSchool'].fillna(pisa['publicSchool'].mode()[0], inplace=True)
+pisa['urban'].fillna(pisa['urban'].mode()[0], inplace=True)
+pisa['fatherWork'].fillna(pisa['fatherWork'].mode()[0], inplace=True)
+pisa['selfBornUS'].fillna(pisa['selfBornUS'].mode()[0], inplace=True)
+pisa['motherBornUS'].fillna(pisa['motherBornUS'].mode()[0], inplace=Tru
+pisa['fatherBornUS'].fillna(pisa['fatherBornUS'].mode()[0], inplace=True)
 
 df=pisa2009train.dropna()
 
