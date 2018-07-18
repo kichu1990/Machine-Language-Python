@@ -14,6 +14,9 @@ pisa2009train=pd.read_csv("pisa2009train.csv")
 #Merge the Data for EDA
 pisa=pd.concat([pisa2009test,pisa2009train],axis=0)
 
+#To find the NaN
+pisa.isnull().sum()
+
 pisa['male'].fillna(pisa['male'].mode()[0], inplace=True)
 pisa['raceeth'].fillna(pisa['raceeth'].mode()[0], inplace=True)
 pisa['preschool'].fillna(pisa['preschool'].mode()[0], inplace=True)
