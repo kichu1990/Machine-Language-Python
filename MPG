@@ -1,6 +1,0 @@
-car_mpg = pd.read_csv('carMPG.csv', sep=',',index_col = None)
-
-car_mpg.head()
-car_mpg.describe()
-
-https://archive.ics.uci.edu/ml/machine-learning-databases/auto-mpg/auto-mpg.data
